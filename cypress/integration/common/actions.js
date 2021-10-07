@@ -1,14 +1,14 @@
 import { Given } from 'cypress-cucumber-preprocessor/steps'
 
-Given('I open {string} page', (uri) => {
+Given('I open {string} page', (url) => {
   const baseUrl = 'http://localhost:3000'
   let path = ''
-  switch (uri) {
+  switch (url) {
     case 'home':
       path = '/'
       break
     default:
-      path = uri
+      path = url
   }
   cy.visit(baseUrl + path)
 })
